@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 8 Mathematics — Unit Plan: Algebra</title>
+<style>
+  :root {
+    --ink: #1f2937;
+    --muted: #4b5563;
+    --line: #cbd5e1;
+    --head: #1e3a8a;
+    --head2: #2563eb;
+    --stripe: #f1f5f9;
+    --accent: #eff6ff;
+    --gold: #b45309;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--ink);
+    background: #e5e7eb;
+    margin: 0;
+    padding: 24px 12px;
+    line-height: 1.45;
+  }
+
+  .page {
+    max-width: 1500px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 28px 26px 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 24px rgba(0,0,0,.12);
+  }
+
+  /* ---------- Header ---------- */
+  header.unit-header {
+    border-bottom: 4px solid var(--head);
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+  }
+
+  header.unit-header h1 {
+    margin: 0 0 6px;
+    font-size: 1.75rem;
+    color: var(--head);
+    letter-spacing: .3px;
+  }
+
+  header.unit-header .subtitle {
+    font-size: 1rem;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+    margin: 16px 0 24px;
+  }
+
+  .meta-card {
+    background: var(--accent);
+    border: 1px solid #bfdbfe;
+    border-left: 5px solid var(--head2);
+    border-radius: 6px;
+    padding: 10px 14px;
+  }
+
+  .meta-card .label {
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    color: var(--muted);
+    font-weight: 700;
+  }
+
+  .meta-card .value {
+    font-size: .98rem;
+    font-weight: 600;
+    color: var(--head);
+  }
+
+  h2.section-title {
+    font-size: 1.2rem;
+    color: var(--head);
+    border-left: 6px solid var(--head2);
+    padding-left: 10px;
+    margin: 34px 0 12px;
+  }
+
+  /* ---------- Main Unit Plan Table ---------- */
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+
+  table.unit-plan {
+    width: 100%;
+    min-width: 1250px;
+    border-collapse: collapse;
+    font-size: .8rem;
+    table-layout: fixed;
+  }
+
+  table.unit-plan thead th {
+    background: var(--head);
+    color: #fff;
+    text-align: left;
+    vertical-align: middle;
+    padding: 10px 8px;
+    font-size: .74rem;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    border-right: 1px solid #3b5aa8;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  table.unit-plan thead th:last-child { border-right: none; }
+
+  table.unit-plan thead th .sub {
+    display: block;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: .68rem;
+    color: #c7d7f5;
+    margin-top: 4px;
+  }
+
+  table.unit-plan td {
+    vertical-align: top;
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--line);
+    border-right: 1px solid #e2e8f0;
+  }
+
+  table.unit-plan td:last-child { border-right: none; }
+
+  table.unit-plan tbody tr:nth-child(even) { background: var(--stripe); }
+
+  table.unit-plan tbody tr:hover { background: #e0ecff; }
+
+  /* Column widths */
+  .col-wk    { width: 4.5%; }
+  .col-topic { width: 11%; }
+  .col-out   { width: 14%; }
+  .col-con   { width: 15%; }
+  .col-act   { width: 20%; }
+  .col-res   { width: 9%; }
+  .col-diff  { width: 12.5%; }
+  .col-ass   { width: 14%; }
+
+  .wk-badge {
+    display: inline-block;
+    background: var(--head2);
+    color: #fff;
+    font-weight: 700;
+    font-size: .82rem;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    border-radius: 50%;
+  }
+
+  .topic {
+    font-weight: 700;
+    color: var(--head);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .quiz-row td { background: #fef3c7 !important; }
+  .assign-row td { background: #dcfce7 !important; }
+  .test-row td { background: #ede9fe !important; }
+
+  .tag {
+    display: inline-block;
+    font-size: .64rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-bottom: 4px;
+  }
+  .tag-quiz   { background: #f59e0b; color: #fff; }
+  .tag-assign { background: #16a34a; color: #fff; }
+  .tag-test   { background: #7c3aed; color: #fff; }
+
+  ul.tight { margin: 0; padding-left: 15px; }
+  ul.tight li { margin-bottom: 4px; }
+
+  .step-list { margin: 0; padding-left: 15px; }
+  .step-list li { margin-bottom: 5px; }
+
+  .lbl {
+    font-weight: 700;
+    color: var(--head);
+  }
+
+  /* ---------- Assessment Summary Table ---------- */
+  table.summary {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .88rem;
+    margin-top: 6px;
+  }
+
+  table.summary thead th {
+    background: var(--head2);
+    color: #fff;
+    padding: 9px 10px;
+    text-align: left;
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+
+  table.summary td {
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  table.summary tbody tr:nth-child(even) { background: var(--stripe); }
+
+  .weight {
+    font-weight: 700;
+    color: var(--head);
+  }
+
+  /* ---------- Test Specs ---------- */
+  .spec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+    margin-top: 8px;
+  }
+
+  .spec-card {
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--head2);
+    border-radius: 6px;
+    padding: 12px 16px;
+    background: #fafbff;
+  }
+
+  .spec-card h3 {
+    margin: 0 0 8px;
+    font-size: .95rem;
+    color: var(--head);
+  }
+
+  .spec-card ul { margin: 0; padding-left: 18px; font-size: .85rem; }
+  .spec-card li { margin-bottom: 4px; }
+
+  .total-box {
+    margin-top: 16px;
+    background: var(--head);
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-size: .95rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: .5px;
+  }
+
+  /* ---------- Superscripts / math ---------- */
+  sup { font-size: .72em; }
+
+  .frac {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-size: .92em;
+    line-height: 1.1;
+    margin: 0 2px;
+  }
+  .frac .num { display: block; border-bottom: 1px solid currentColor; padding: 0 3px; }
+  .frac .den { display: block; padding: 0 3px; }
+
+  /* ---------- Footer ---------- */
+  footer.plan-footer {
+    margin-top: 34px;
+    padding-top: 14px;
+    border-top: 2px solid var(--line);
+    font-size: .78rem;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  /* ---------- Print ---------- */
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      font-size: 9px;
+    }
+    .page {
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0;
+      max-width: 100%;
+    }
+    .no-print { display: none !important; }
+    .table-wrap { overflow: visible; border: none; }
+    table.unit-plan {
+      min-width: 0;
+      width: 100%;
+      font-size: 6.6pt;
+      table-layout: fixed;
+    }
+    table.unit-plan thead th {
+      position: static;
+      font-size: 6.2pt;
+      padding: 4px 3px;
+    }
+    table.unit-plan td { padding: 4px 3px; }
+    table.unit-plan tbody tr { page-break-inside: avoid; }
+    .page-break { page-break-before: always; }
+    h2.section-title { font-size: 10pt; margin: 14px 0 8px; }
+    header.unit-header h1 { font-size: 14pt; }
+  }
+
+  @page {
+    size: landscape;
+    margin: 10mm;
+  }
+
+  /* Print button */
+  .print-btn {
+    display: inline-block;
+    background: var(--head2);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 9px 20px;
+    font-size: .85rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 16px;
+    letter-spacing: .3px;
+  }
+  .print-btn:hover { background: var(--head); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <button class="print-btn no-print" onclick="window.print()">🖨 Print / Save as PDF</button>
+
+  <!-- ============ HEADER ============ -->
+  <header class="unit-header">
+    <h1>UNIT PLAN: ALGEBRA — Grade 8 Mathematics</h1>
+    <p class="subtitle">Objectives 5.5 – 5.15 · Binary Operations, Algebraic Manipulation, Equations, Inequalities &amp; Identities</p>
+  </header>
+
+  <div class="meta-grid">
+    <div class="meta-card">
+      <div class="label">Subject / Grade</div>
+      <div class="value">Mathematics — Grade 8</div>
+    </div>
+    <div class="meta-card">
+      <div class="label">Unit Topic</div>
+      <div class="value">Algebra (Objectives 5.5 – 5.15)</div>
+    </div>
+    <div class="meta-card">
+      <div class="label">Duration</div>
+      <div class="value">13 sessions × 35 minutes</div>
+    </div>
+    <div class="meta-card">
+      <div class="label">Assessments</div>
+      <div class="value">2 Quizzes · 1 Assignment · Final Test</div>
+    </div>
+  </div>
+
+  <!-- ============ MAIN TABLE ============ -->
+  <h2 class="section-title">Unit Plan</h2>
+
+  <div class="table-wrap">
+    <table class="unit-plan">
+      <thead>
+        <tr>
+          <th class="col-wk">Wk/<br>Lesson</th>
+          <th class="col-topic">Unit Name or Topic</th>
+          <th class="col-out">Learning / Target Outcomes <span class="sub">AND/OR Specific Objectives</span></th>
+          <th class="col-con">Detailed Concepts / Rules / Principles / Generalisations <span class="sub">Main terms, rules, concepts &amp; principles to be taught</span></th>
+          <th class="col-act">Activities / Strategies <span class="sub">Activities and strategies intended for each lesson</span></th>
+          <th class="col-res">Resources / Technology <span class="sub">Detailed per lesson</span></th>
+          <th class="col-diff">Differentiation <span class="sub">Accommodations for different learners per lesson</span></th>
+          <th class="col-ass">Assessment &amp; Evaluation <span class="sub">Type, explanations, rubrics — formative &amp; summative</span></th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <!-- ================= LESSON 1 ================= -->
+        <tr>
+          <td><span class="wk-badge">1</span></td>
+          <td><span class="topic">Introduction to Binary Operations</span><em>Obj. 5.5</em></td>
+          <td>By the end of the lesson, students will be able to <strong>evaluate expressions involving binary operations</strong> other than the four basic operations (addition, subtraction, multiplication, division).</td>
+          <td>
+            <p style="margin:0 0 6px;"><span class="lbl">Binary Operation:</span> an operation that combines two elements to produce a third element.</p>
+            <ul class="tight">
+              <li><em>a</em> ⊕ <em>b</em> = <em>a</em><sup>2</sup> + <em>b</em><sup>2</sup></li>
+              <li><em>a</em> ⊗ <em>b</em> = 2<em>a</em> + 3<em>b</em></li>
+              <li>Students substitute given values and evaluate using order of operations.</li>
+            </ul>
+          </td>
+          <td>
+            <ol class="step-list">
+              <li><strong>Hook:</strong> Brainstorm — "What does the word 'operation' mean in maths?" Review the four basic operations; introduce new operations.</li>
+              <li><strong>Direct Instruction:</strong> Define binary operation. Worked example — If <em>a</em> ⊕ <em>b</em> = <em>a</em><sup>2</sup> + <em>b</em><sup>2</sup>, find 3 ⊕ 4.</li>
+              <li><strong>Guided Practice:</strong> Pairs evaluate 5 ⊗ 2 where <em>a</em> ⊗ <em>b</em> = 3<em>a</em> − <em>b</em>.</li>
+              <li><strong>Independent Practice:</strong> Worksheet with 10 evaluation problems.</li>
+              <li><strong>Exit Ticket:</strong> Evaluate 7 ★ 3 given <em>a</em> ★ <em>b</em> = <em>ab</em> − <em>a</em>.</li>
+            </ol>
+          </td>
+          <td>Whiteboard, markers, worksheets, projector.</td>
+          <td>
+            <ul class="tight">
+              <li><strong>Struggling learners:</strong> Formula card with step-by-step substitution guide; reduced number of problems.</li>
+              <li><strong>Advanced learners:</strong> Operations with three variables or nested operations.</li>
+            </ul>
+          </td>
+          <td>
+            <p style="margin:0 0 5px;"><span class="lbl">Formative:</span> Observation during guided practice; exit ticket.</p>
+            <p style="margin:0;"><span class="lbl">Summative:</span> Worksheet graded for completion and accuracy.</p>
+          </td>
+        </tr>
+
+        <!-- ================= LESSON 2 ================= -->
+        <tr>
+          <td><span class="wk-badge">2</span></td>
+          <td><span class="topic">Commutative, Associative &amp; Distributive Properties</span><em>Obj. 5.5</em></td>
+          <td>By the end of the lesson, students will be able to <strong>identify and apply</strong> the commutative, associative and distributive properties.</td>
+          <td>
+            <ul class="tight">
+              <li><span class="lbl">Commutative:</span> <em>a</em> + <em>b</em> = <em>b</em> + <em>a</em>; <em>a</em> × <em>b</em> = <em>b</em> × <em>a</em> (order does not matter).</li>
+              <li><span class="lbl">Associative:</span> (<em>a</em> + <em>b</em>) + <em>c</em> = <em>a</em> + (<em>b</em> + <em>c</em>); (<em>a</em> × <em>b</em>) × <em>c</em> = <em>a</em> × (<em>b</em> × <em>c</em>) (grouping does not matter).</li>
+              <li><span class="lbl">Distributive:</span> <em>a</em>(<em>b</em> + <em>c</em>) = <em>ab</em> + <em>ac</em>.</li>
+            </ul>
+          </td>
+          <td>
+            <ol class="step-list">
+              <li><strong>Warm-up:</strong> Quick mental maths problems.</li>
+              <li><strong>Discovery Activity:</strong> Students use number cards to test whether order/grouping changes results.</li>
+              <li><strong>Direct Instruction:</strong> Formal definitions with examples.</li>
+              <li><strong>Partner Work:</strong> Identify which property is used in given equations.</li>
+              <li><strong>Independent Practice:</strong> 15 problems applying properties to simplify expressions.</li>
+              <li><strong>Closure:</strong> Summarise key differences between the properties.</li>
+            </ol>
+          </td>
+          <td>Number cards, whiteboard, worksheets.</td>
+          <td>
+            <ul class="tight">
+              <li><strong>Visual learners:</strong> Colour-coded highlighting for each property.</li>
+              <li><strong>Kinesthetic learners:</strong> Manipulatives (counters) to demonstrate grouping.</li>
+              <li><strong>ELL students:</strong> Bilingual vocabulary cards.</li>
+            </ul>
+          </td>
+          <td>
+            <p style="margin:0 0 5px;"><span class="lbl">Formative:</span> Thumbs up/down checks; partner discussion observation.</p>
+            <p style="margin:0;"><span class="lbl">Summative:</span> Property identification quiz (5 questions).</p>
+          </td>
+        </tr>
+
+        <!-- ================= LESSON 3 ================= -->
+        <tr>
+          <td><span class="wk-badge">3</span></td>
+          <td><span class="topic">Substitution in Algebraic Expressions</span><em>Obj. 5.6</em></td>
+          <td>By the end of the lesson, students will be able to <strong>substitute numbers for variables</strong> in algebraic expressions.</td>
+          <td>
+            <p style="margin:0 0 6px;"><span class="lbl">Substitution:</span> Replacing variables with given numerical values and simplifying using order of operations (PEMDAS/BODMAS).</p>
+            <p style="margin:0;"><span class="lbl">Key terms:</span> variable, constant, coefficient, term, expression.</p>
+          </td>
+          <td>
+            <ol class="step-list">
+              <li><strong>Review:</strong> Quick recall of order of operations.</li>
+              <li><strong>Direct Instruction:</strong> Model substitution — evaluate 3<em>x</em> + 2<em>y</em> when <em>x</em> = 4, <em>y</em> = 5.</li>
+              <li><strong>Guided Practice:</strong> Evaluate 2<em>a</em><sup>2</sup> − 3<em>b</em> when <em>a</em> = 3, <em>b</em> = 2.</li>
+              <li><strong>Stations Activity:</strong> 4 stations of substitution problems at different difficulty levels.</li>
+              <li><strong>Independent Work:</strong> 12 substitution problems.</li>
+              <li><strong>Exit Ticket:</strong> Evaluate 5<em>m</em> − 2<em>n</em> + 7 when <em>m</em> = 6, <em>n</em> = 4.</li>
+            </ol>
+          </td>
+          <td>Whiteboard, station cards, worksheets, calculators (optional).</td>
+          <td>
+            <ul class="tight">
+              <li><strong>Struggling learners:</strong> Expression templates with blanks provided.</li>
+              <li><strong>Advanced learners:</strong> Expressions involving fractions and exponents.</li>
+            </ul>
+          </td>
+          <td>
+            <p style="margin:0 0 5px;"><span class="lbl">Formative:</span> Station work observation; exit ticket.</p>
+            <p style="margin:0;"><span class="lbl">Summative:</span> Homework assignment (10 substitution problems).</p>
+          </td>
+        </tr>
+
+        <!-- ================= LESSON 4 ================= -->
+        <tr>
+          <td><span class="wk-badge">4</span></td>
+          <td><span class="topic">Expanding Algebraic Expressions (Distributive Law)</span><em>Obj. 5.7</em></td>
+          <td>By the end of the lesson, students will be able to <strong>apply the distributive law to expand</strong> algebraic expressions.</td>
+          <td>
+            <ul class="tight">
+              <li><span class="lbl">Expanding:</span> <em>a</em>(<em>b</em> + <em>c</em>) = <em>ab</em> + <em>ac</em></li>
+              <li><span class="lbl">Extension:</span> (<em>a</em> + <em>b</em>)(<em>x</em> + <em>y</em>) = <em>ax</em> + <em>ay</em> + <em>bx</em> + <em>by</em></li>
+              <li><span class="lbl">Key concept:</span> Each term in the first bracket multiplies each term in the second bracket.</li>
+            </ul>
+          </td>
+          <td>
+            <ol class="step-list">
+              <li><strong>Warm-up:</strong> Review distributive property with numbers.</li>
+              <li><strong>Direct Instruction:</strong> Expand 3(<em>x</em> + 4), then 2<em>x</em>(3<em>x</em> − 5).</li>
+              <li><strong>Guided Practice:</strong> Expand (<em>x</em> + 2)(<em>x</em> + 3) using FOIL.</li>
+              <li><strong>Pair Activity:</strong> "Expand &amp; Trade" — students expand, then exchange with a partner to check.</li>
+              <li><strong>Independent Practice:</strong> 15 expansion problems (monomial × binomial, binomial × binomial).</li>
+              <li><strong>Closure:</strong> Quick quiz — expand 4(2<em>x</em> − 3) and (<em>x</em> + 5)(<em>x</em> − 2).</li>
+            </ol>
+          </td>
+          <td>Whiteboard, worksheets, algebra tiles (optional).</td>
+          <td>
+            <ul class="tight">
+              <li><strong>Visual learners:</strong> Area models (rectangles) to show expansion.</li>
+              <li><strong>Struggling learners:</strong> Step-by-step checklists.</li>
+              <li><strong>Advanced learners:</strong> Trinomial × binomial expansion.</li>
+            </ul>
+          </td>
+          <td>
+            <p style="margin:0 0 5px;"><span class="lbl">Formative:</span> Pair activity observation; closure quiz.</p>
+            <p style="margin:0;"><span class="lbl">Summative:</span> Worksheet graded.</p>
+          </td>
+        </tr>
+
+        <!-- ================= LESSON 5 ================= -->
+        <tr>
+          <td><span class="wk-badge">5</span></td>
+          <td><span class="topic">Factorising Algebraic Expressions</span><em>Obj. 5.13</em></td>
+          <td>By the end of the lesson, students will be able to <strong>factorise simple algebraic expressions</strong> using common factors.</td>
+          <td>
+            <p style="margin:0 0 6px;"><span class="lbl">Factorising (Common Factor):</span> Find the highest common factor (HCF) of the terms and write as a product.</p>
+            <ul class="tight">
+              <li><em>ax</em> + <em>bx</em> = <em>x</em>(<em>a</em> + <em>b</em>)</li>
+              <li><em>ax</em><sup>2</sup> + <em>bx</em> = <em>x</em>(<em>ax</em> + <em>b</em>)</li>
+              <li><span class="lbl">Key concept:</span> Factorising is the reverse of expanding.</li>
+            </ul>
+          </td>
+          <td>
+            <ol class="step-list">
+              <li><strong>Warm-up:</strong> Find the HCF of numbers (e.g., HCF of 12 and 18).</li>
+              <li><strong>Direct Instruction:</strong> Factorise 6<em>x</em> + 9 = 3(2<em>x</em> + 3).</li>
+              <li><strong>Guided Practice:</strong> Factorise 8<em>x</em> − 12 and 15<em>x</em><sup>2</sup> + 10<em>x</em>.</li>
+              <li><strong>"I Do, We Do, You Do"</strong> strategy.</li>
+              <li><strong>Independent Practice:</strong> 12 factorising problems.</li>
+              <li><strong>Exit Ticket:</strong> Factorise 14<em>x</em> − 21 and 9<em>x</em><sup>2</sup> + 6<em>x</em>.</li>
+            </ol>
+          </td>
+          <td>Whiteboard, worksheets, factor cards.</td>
+          <td>
+            <ul class="tight">
+              <li><strong>Struggling learners:</strong> Provided list of common factors.</li>
+              <li><strong>Advanced learners:</strong> Factorise expressions with negative common factors.</li>
+            </ul>
+          </td>
+          <td>
+            <p style="margin:0 0 5px;"><span class="lbl">Formative:</span> Exit ticket; observation.</p>
+            <p style="margin:0;"><span class="lbl">Summative:</span> <strong>Quiz 1</strong> (covers Lessons 1–5) — 20 minutes.</p>
+          </td>
+        </tr>
+
+        <!-- ================= LESSON 6 ================= -->
+        <tr class="quiz-row">
+          <td><span class="wk-badge">6</span></td>
+          <td><span class="tag tag-quiz">Quiz 1</span><span class="topic">Quiz 1 (Lessons 1–5) &amp; Introduction to Algebraic Fractions</span><em>Obj. 5.8</em></td>
+          <td>By the end of the lesson, students will <strong>demonstrate understanding</strong> of binary operations, properties, substitution, expansion and factorisation; and begin <strong>simplifying algebraic fractions</strong>.</td>
+          <td>
+            <p style="margin:0 0 6px;"><span class="lbl">Quiz content:</span> binary operations; commutative, associative and distributive properties; substitution; expansion; factorisation.</p>
+            <p style="margin:0;"><span class="lbl">Algebraic Fractions:</span> fractions with variables in the numerator and/or denominator; simplified by cancelling common factors.</p>
+          </td>
+          <td>
+            <ol class="step-list">
+              <li><strong>Quiz (20 min):</strong> 15 questions covering Lessons 1–5.</li>
+              <li><strong>Introduction to Algebraic Fractions:</strong> Define; show <span class="frac"><span class="num">6x</span><span class="den">9</span></span> = <span class="frac"><span class="num">2x</span><span class="den">3</span></span>.</li>
+              <li><strong>Guided Practice:</strong> Simplify <span class="frac"><span class="num">12ab</span><span class="den">18a</span></span> and <span class="frac"><span class="num">5x<sup>2</sup></span><span class="den">10x</span></span>.</li>
+              <li><strong>Independent Practice:</strong> 8 simplification problems.</li>
+              <li><strong>Closure:</strong> Recap key points.</li>
+            </ol>
+          </td>
+          <td>Quiz papers, whiteboard, worksheets.</td>
+          <td>
+            <ul class="tight">
+              <li><strong>During quiz:</strong> Read aloud for students with reading difficulties; extended time if needed.</li>
+              <li><strong>For fractions:</strong> Visual fraction models.</li>
+            </ul>
+          </td>
+          <td>
+            <p style="margin:0 0 5px;"><span class="lbl">Summative:</span> Quiz 1 graded.</p>
+            <p style="margin:0;"><span class="lbl">Formative:</span> Fraction simplification observation.</p>
+          </td>
+        </tr>
+
+        <!-- ================= LESSON 7 ================= -->
+        <tr>
+          <td><span class="wk-badge">7</span></td>
+          <td><span class="topic">Operations on Algebraic Fractions</span><em>Obj. 5.8</em></td>
+          <td>By the end of the lesson, students will be able to perform the <strong>four basic operations (+, −, ×, ÷) on algebraic fractions</strong>.</td>
+          <td>
+            <ul class="tight">
+              <li><span class="lbl">Addition / Subtraction:</span> Find a common denominator, then add/subtract the numerators.</li>
+              <li><span class="lbl">Multiplication:</span> Multiply numerators and multiply denominators.</li>
+              <li><span class="lbl">Division:</span> Multiply by the reciprocal.</li>
+              <li><span class="lbl">Key principle:</span> The same rules apply as for numerical fractions.</li>
+            </ul>
+          </td>
+          <td>
+            <ol class="step-list">
+              <li><strong>Review:</strong> Numerical fraction operations.</li>
+              <li><strong>Direct Instruction:</strong> Demonstrate each operation with algebraic fractions:
+                <ul class="tight" style="margin-top:4px;">
+                  <li>Addition: <span class="frac"><span class="num">2</span><span class="den">x</span></span> + <span class="frac"><span class="num">3</span><span class="den">x</span></span> = <span class="frac"><span class="num">5</span><span class="den">x</span></span></li>
+                  <li>Multiplication: <span class="frac"><span class="num">2</span><span class="den">x</span></span> × <span class="frac"><span class="num">x</span><span class="den">3</span></span> = <span class="frac"><span class="num">2</span><span class="den">3</span></span></li>
+                  <li>Division: <span class="frac"><span class="num">2</span><span class="den">x</span></span> ÷ <span class="frac"><span class="num">3</span><span class="den">y</span></span> = <span class="frac"><span class="num">2y</span><span class="den">3x</span></span></li>
+                </ul>
+              </li>
+              <li><strong>Guided Practice:</strong> Work through examples step by step.</li>
+              <li><strong>Group Activity:</strong> "Fraction Operation Relay" — groups compete to solve problems.</li>
+              <li><strong>Independent Practice:</strong> 12 operation problems.</li>
+            </ol>
+          </td>
+          <td>Whiteboard, worksheets, fraction operation cards.</td>
+          <td>
+            <ul class="tight">
+              <li><strong>Struggling learners:</strong> Operation flowcharts provided.</li>
+              <li><strong>Advanced learners:</strong> Fractions with quadratic denominators.</li>
+            </ul>
+          </td>
+          <td>
+            <p style="margin:0 0 5px;"><span class="lbl">Formative:</span> Relay observation; group work.</p>
+            <p style="margin:0;"><span class="lbl">Summative:</span> Worksheet graded.</p>
+          </td>
+        </tr>
+
+        <!-- ================= LESSON 8 ================= -->
+        <tr>
+          <td><span class="wk-badge">8</span></td>
+          <td><span class="topic">Laws of Indices (Integral Indices)</span><em>Obj. 5.9</em></td>
+          <td>By the end of the lesson, students will be able to use the <strong>laws of indices to manipulate expressions with integral indices</strong>.</td>
+          <td>
+            <ul class="tight">
+              <li>(i) <em>x</em><sup>m</sup> × <em>x</em><sup>n</sup> = <em>x</em><sup>m+n</sup></li>
+              <li>(ii) <em>x</em><sup>m</sup> ÷ <em>x</em><sup>n</sup> = <em>x</em><sup>m−n</sup></li>
+              <li>(iii) (<em>x</em><sup>m</sup>)<sup>n</sup> = <em>x</em><sup>mn</sup></li>
+              <li>(iv) <em>x</em><sup>−m</sup> = <span class="frac"><span class="num">1</span><span class="den">x<sup>m</sup></span></span></li>
+              <li><span class="lbl">Key concept:</span> Integral indices — positive and negative integers (<em>m</em>, <em>n</em> ∈ ℤ).</li>
+            </ul>
+          </td>
+          <td>
+            <ol class="step-list">
+              <li><strong>Warm-up:</strong> Expand <em>x</em><sup>3</sup> × <em>x</em><sup>2</sup> as <em>x</em>·<em>x</em>·<em>x</em>·<em>x</em>·<em>x</em>.</li>
+              <li><strong>Direct Instruction:</strong> Introduce each law with worked examples.</li>
+              <li><strong>Guided Practice:</strong> Apply the laws to simplify expressions.</li>
+              <li><strong>"Law Sort" Activity:</strong> Match expressions to the correct law.</li>
+              <li><strong>Independent Practice:</strong> 15 simplification problems.</li>
+              <li><strong>Exit Ticket:</strong> Simplify <em>x</em><sup>5</sup> × <em>x</em><sup>−2</sup> and (<em>x</em><sup>3</sup>)<sup>4</sup>.</li>
+            </ol>
+          </td>
+          <td>Whiteboard, law cards, worksheets.</td>
+          <td>
+            <ul class="tight">
+              <li><strong>Visual learners:</strong> Colour-coded law cards.</li>
+              <li><strong>Struggling learners:</strong> Law reference sheet provided.</li>
+            </ul>
+          </td>
+          <td>
+            <p style="margin:0 0 5px;"><span class="lbl">Formative:</span> Exit ticket; law sort observation.</p>
+            <p style="margin:0;"><span class="lbl">Summative:</span> Practice worksheet.</p>
+          </td>
+        </tr>
+
+        <!-- ================= LESSON 9 ================= -->
+        <tr>
+          <td><span class="wk-badge">9</span></td>
+          <td><span class="topic">Solving Linear Equations</span><em>Obj. 5.10</em></td>
+          <td>By the end of the lesson, students will be able to <strong>solve linear equations in one unknown</strong>.</td>
+          <td>
+            <p style="margin:0 0 6px;"><span class="lbl">Linear equation:</span> <em>ax</em> + <em>b</em> = <em>c</em>, where <em>a</em> ≠ 0.</p>
+            <ul class="tight">
+              <li><span class="lbl">Steps:</span> Isolate the variable using inverse operations (addition/subtraction; multiplication/division).</li>
+              <li><span class="lbl">Key concept:</span> Balance — whatever you do to one side, do to the other.</li>
+            </ul>
+          </td>
+          <td>
+            <ol class="step-list">
+              <li><strong>Warm-up:</strong> Solve simple equations mentally (e.g., <em>x</em> + 5 = 12).</li>
+              <li><strong>Direct Instruction:</strong> Model solving 3<em>x</em> + 7 = 22.</li>
+              <li><strong>Guided Practice:</strong> Solve 5<em>x</em> − 3 = 17 and 2<em>x</em> + 9 = 25.</li>
+              <li><strong>"Equation Balance" Activity:</strong> Use balance scales (physical or digital) to demonstrate.</li>
+              <li><strong>Independent Practice:</strong> 10 equations with the variable on one side; 5 with variables on both sides.</li>
+              <li><strong>Closure:</strong> Check solutions by substitution.</li>
+            </ol>
+          </td>
+          <td>Balance scale (physical/digital), whiteboard, worksheets.</td>
+          <td>
+            <ul class="tight">
+              <li><strong>Struggling learners:</strong> Equation-solving flowcharts.</li>
+              <li><strong>Advanced learners:</strong> Equations with fractions and brackets.</li>
+            </ul>
+          </td>
+          <td>
+            <p style="margin:0 0 5px;"><span class="lbl">Formative:</span> Balance activity observation; closure check.</p>
+            <p style="margin:0;"><span class="lbl">Summative:</span> Homework assignment (10 equations).</p>
+          </td>
+        </tr>
+
+        <!-- ================= LESSON 10 ================= -->
+        <tr>
+          <td><span class="wk-badge">10</span></td>
+          <td><span class="topic">Solving Linear Inequalities</span><em>Obj. 5.11</em></td>
+          <td>By the end of the lesson, students will be able to <strong>solve simple linear inequalities in one unknown</strong> and <strong>represent solutions using set builder notation</strong>.</td>
+          <td>
+            <ul class="tight">
+              <li><span class="lbl">Linear inequality:</span> <em>ax</em> + <em>b</em> &lt; <em>c</em>; &gt;; ≤; ≥.</li>
+              <li><span class="lbl">Key rule:</span> When multiplying or dividing by a negative number, <strong>reverse</strong> the inequality sign.</li>
+              <li><span class="lbl">Set builder notation:</span> {<em>x</em> : <em>x</em> &gt; 3} means "all <em>x</em> such that <em>x</em> &gt; 3".</li>
+            </ul>
+          </td>
+          <td>
+            <ol class="step-list">
+              <li><strong>Warm-up:</strong> Compare equations vs inequalities.</li>
+              <li><strong>Direct Instruction:</strong> Solve 2<em>x</em> − 5 &lt; 9, then 3<em>x</em> + 4 ≥ 19.</li>
+              <li><strong>Guided Practice:</strong> Solve and represent on a number line and in set builder notation.</li>
+              <li><strong>"Inequality Bingo"</strong> — students solve and mark answers.</li>
+              <li><strong>Independent Practice:</strong> 8 inequalities.</li>
+              <li><strong>Exit Ticket:</strong> Solve −2<em>x</em> + 3 ≤ 7 and write the answer in set builder notation.</li>
+            </ol>
+          </td>
+          <td>Number lines, whiteboard, bingo cards, worksheets.</td>
+          <td>
+            <ul class="tight">
+              <li><strong>Visual learners:</strong> Extensive use of number lines.</li>
+              <li><strong>Struggling learners:</strong> Inequality rules card.</li>
+            </ul>
+          </td>
+          <td>
+            <p style="margin:0 0 5px;"><span class="lbl">Formative:</span> Bingo activity; exit ticket.</p>
+            <p style="margin:0;"><span class="lbl">Summative:</span> Practice worksheet.</p>
+          </td>
+        </tr>
+
+        <!-- ================= LESSON 11 ================= -->
+        <tr>
+          <td><span class="wk-badge">11</span></td>
+          <td><span class="topic">Changing the Subject of Formulae</span><em>Obj. 5.12</em></td>
+          <td>By the end of the lesson, students will be able to <strong>change the subject of formulae</strong>, including <em>y</em> = <em>mx</em> + <em>c</em>, <em>C</em> = 2π<em>r</em> and <em>y</em> = <em>c</em> / (2<em>x</em>).</td>
+          <td>
+            <p style="margin:0 0 6px;"><span class="lbl">Subject of a formula:</span> the variable expressed in terms of the other variables.</p>
+            <ul class="tight">
+              <li><em>y</em> = <em>mx</em> + <em>c</em> → make <em>x</em> the subject: <em>x</em> = (<em>y</em> − <em>c</em>) / <em>m</em></li>
+              <li><em>C</em> = 2π<em>r</em> → make <em>r</em> the subject: <em>r</em> = <em>C</em> / (2π)</li>
+              <li><em>y</em> = <em>c</em> / (2<em>x</em>) → make <em>x</em> the subject: <em>x</em> = <em>c</em> / (2<em>y</em>)</li>
+            </ul>
+          </td>
+          <td>
+            <ol class="step-list">
+              <li><strong>Warm-up:</strong> Review inverse operations.</li>
+              <li><strong>Direct Instruction:</strong> Demonstrate each type step by step.</li>
+              <li><strong>Guided Practice:</strong> Change the subject for given formulae.</li>
+              <li><strong>"Formula Scavenger Hunt"</strong> — find and rearrange formulae.</li>
+              <li><strong>Independent Practice:</strong> 10 rearrangement problems.</li>
+              <li><strong>Closure:</strong> Summarise the steps for rearranging.</li>
+            </ol>
+          </td>
+          <td>Whiteboard, formula cards, worksheets.</td>
+          <td>
+            <ul class="tight">
+              <li><strong>Struggling learners:</strong> Step-by-step templates.</li>
+              <li><strong>Advanced learners:</strong> Formulae involving squares and square roots.</li>
+            </ul>
+          </td>
+          <td>
+            <p style="margin:0 0 5px;"><span class="lbl">Formative:</span> Scavenger hunt observation; closure.</p>
+            <p style="margin:0;"><span class="lbl">Summative:</span> <strong>Class Assignment</strong> (Lessons 6–11) — 30 minutes.</p>
+          </td>
+        </tr>
+
+        <!-- ================= LESSON 12 ================= -->
+        <tr class="assign-row">
+          <td><span class="wk-badge">12</span></td>
+          <td><span class="tag tag-assign">Assignment</span><span class="topic">Class Assignment &amp; Worded Problems</span><em>Obj. 5.14</em></td>
+          <td>By the end of the lesson, students will <strong>demonstrate understanding</strong> of algebraic fractions, indices, equations, inequalities and subject of formulae; and <strong>solve worded problems</strong> involving linear equations and inequalities.</td>
+          <td>
+            <p style="margin:0 0 6px;"><span class="lbl">Assignment content:</span> algebraic fractions, laws of indices, linear equations, linear inequalities, changing the subject.</p>
+            <p style="margin:0 0 6px;"><span class="lbl">Worded problems:</span> Translate real-life situations into equations/inequalities and solve.</p>
+            <p style="margin:0;"><span class="lbl">Key skill:</span> Identify variables → form equation/inequality → solve → interpret the answer.</p>
+          </td>
+          <td>
+            <ol class="step-list">
+              <li><strong>Class Assignment (25 min):</strong> 20 questions covering Lessons 6–11.</li>
+              <li><strong>Introduction to Worded Problems:</strong> "John has 3 more than twice Mary's age. If John is 25, how old is Mary?"</li>
+              <li><strong>Guided Practice:</strong> "A number increased by 7 is at least 15."</li>
+              <li><strong>Independent Practice:</strong> 5 worded problems.</li>
+              <li><strong>Closure:</strong> Share solutions and strategies.</li>
+            </ol>
+          </td>
+          <td>Assignment papers, whiteboard, worksheets.</td>
+          <td>
+            <ul class="tight">
+              <li><strong>During assignment:</strong> Read questions aloud; extended time.</li>
+              <li><strong>For word problems:</strong> Sentence frames for translating.</li>
+            </ul>
+          </td>
+          <td>
+            <p style="margin:0 0 5px;"><span class="lbl">Summative:</span> Class Assignment graded.</p>
+            <p style="margin:0;"><span class="lbl">Formative:</span> Word-problem observation.</p>
+          </td>
+        </tr>
+
+        <!-- ================= LESSON 13 ================= -->
+        <tr>
+          <td><span class="wk-badge">13</span></td>
+          <td><span class="topic">Identities &amp; Review for Final Test</span><em>Obj. 5.15</em></td>
+          <td>By the end of the lesson, students will be able to <strong>prove two algebraic expressions to be identical</strong> and <strong>distinguish between equations and identities</strong>.</td>
+          <td>
+            <ul class="tight">
+              <li><span class="lbl">Equation:</span> true for specific values only — e.g., 2<em>x</em> + 3 = 7 is true only when <em>x</em> = 2.</li>
+              <li><span class="lbl">Identity:</span> true for all values — e.g., 2(<em>x</em> + 3) = 2<em>x</em> + 6 is true for all <em>x</em>.</li>
+              <li><span class="lbl">Proof:</span> Expand/factorise both sides to show they are equivalent.</li>
+            </ul>
+          </td>
+          <td>
+            <ol class="step-list">
+              <li><strong>Warm-up:</strong> Decide whether 3(<em>x</em> + 2) = 3<em>x</em> + 6 is an equation or an identity.</li>
+              <li><strong>Direct Instruction:</strong> Define and distinguish; show proof by expansion.</li>
+              <li><strong>Guided Practice:</strong> Prove (<em>x</em> + 1)<sup>2</sup> = <em>x</em><sup>2</sup> + 2<em>x</em> + 1.</li>
+              <li><strong>"Equation or Identity?" Sort Activity.</strong></li>
+              <li><strong>Review Game:</strong> "Jeopardy" covering all topics.</li>
+              <li><strong>Final Test Preparation:</strong> Go over key concepts and practice questions.</li>
+            </ol>
+          </td>
+          <td>Whiteboard, sort cards, review materials.</td>
+          <td>
+            <ul class="tight">
+              <li><strong>Struggling learners:</strong> Identity proof templates.</li>
+              <li><strong>Advanced learners:</strong> Prove more complex identities.</li>
+            </ul>
+          </td>
+          <td>
+            <p style="margin:0 0 5px;"><span class="lbl">Formative:</span> Sort activity; review game.</p>
+            <p style="margin:0;"><span class="lbl">Summative:</span> <strong>Final Test</strong> (next session) — covers all topics.</p>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============ ASSESSMENT SUMMARY ============ -->
+  <h2 class="section-title page-break">Assessment Summary</h2>
+
+  <table class="summary">
+    <thead>
+      <tr>
+        <th style="width:18%;">Assessment</th>
+        <th style="width:14%;">Type</th>
+        <th style="width:16%;">Lessons Covered</th>
+        <th style="width:40%;">Format</th>
+        <th style="width:12%;">Weight</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Quiz 1</strong></td>
+        <td>Summative</td>
+        <td>1 – 5</td>
+        <td>15 questions (short answer)</td>
+        <td class="weight">15%</td>
+      </tr>
+      <tr>
+        <td><strong>Quiz 2</strong></td>
+        <td>Summative</td>
+        <td>6 – 10</td>
+        <td>15 questions (short answer)</td>
+        <td class="weight">15%</td>
+      </tr>
+      <tr>
+        <td><strong>Class Assignment</strong></td>
+        <td>Summative</td>
+        <td>6 – 11</td>
+        <td>20 questions (mixed)</td>
+        <td class="weight">20%</td>
+      </tr>
+      <tr>
+        <td><strong>Final Test</strong></td>
+        <td>Summative</td>
+        <td>All</td>
+        <td>Multiple Choice, True/False, Matching, Structured Questions</td>
+        <td class="weight">50%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ============ FINAL TEST SPECIFICATIONS ============ -->
+  <h2 class="section-title">Final Test Specifications</h2>
+
+  <div class="spec-grid">
+
+    <div class="spec-card">
+      <h3>Section A — Multiple Choice <span style="font-weight:400;font-size:.8rem;">(10 questions)</span></h3>
+      <ul>
+        <li>Evaluating binary operations</li>
+        <li>Identifying properties</li>
+        <li>Results of substitution</li>
+        <li>Expanded / factorised forms</li>
+        <li>Applications of index laws</li>
+        <li>Solutions of equations</li>
+        <li>Solutions of inequalities</li>
+      </ul>
+    </div>
+
+    <div class="spec-card">
+      <h3>Section B — True or False <span style="font-weight:400;font-size:.8rem;">(5 questions)</span></h3>
+      <ul>
+        <li>Statements about the properties</li>
+        <li>Equation vs. identity identification</li>
+        <li>Statements about index laws</li>
+      </ul>
+    </div>
+
+    <div class="spec-card">
+      <h3>Section C — Matching <span style="font-weight:400;font-size:.8rem;">(2 sets of 5)</span></h3>
+      <ul>
+        <li>Match expressions to their expanded / factorised forms</li>
+        <li>Match equations to their solutions</li>
+      </ul>
+    </div>
+
+    <div class="spec-card">
+      <h3>Section D — Structured Questions <span style="font-weight:400;font-size:.8rem;">(5 questions)</span></h3>
+      <ul>
+        <li>Evaluate a binary operation — <strong>(2 marks)</strong></li>
+        <li>Expand and factorise expressions — <strong>(4 marks)</strong></li>
+        <li>Simplify algebraic fractions — <strong>(3 marks)</strong></li>
+        <li>Solve an equation and an inequality — <strong>(4 marks)</strong></li>
+        <li>Change the subject and solve a worded problem — <strong>(4 marks)</strong></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="total-box">
+    Total: 50 marks &nbsp;|&nbsp; Time: 60 minutes
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="plan-footer">
+    Grade 8 Mathematics Unit Plan — Algebra (Objectives 5.5 – 5.15) &nbsp;·&nbsp; 13 sessions × 35 minutes &nbsp;·&nbsp; Prepared for classroom use
+  </footer>
+
+</div>
+</body>
+</html>
